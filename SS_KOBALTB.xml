@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="167039b6-0194-4850-8472-2363bfe70f5b" activeEnvironment="Default" name="UCD_KOBALT_PROJECT" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings/>
+	<con:testSuite id="13931f19-3dd0-4978-82a2-077e67e42ae3" name="esbqa1a_SterlingServices_2_KOBALT">
+		<con:settings/>
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="3b6ac148-4dde-42fd-8ecf-4a4fc4318f51" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="KOBALT" searchProperties="true">
+			<con:settings/>
+			<con:testStep type="httprequest" name="esbqa1a_SterlingServices_2_ObjectStatus_KOBALT" id="d4996cf6-b6f1-4cdc-a726-9de46cc0e3f3">
+				<con:settings/>
+				<con:config method="POST" xsi:type="con:HttpRequest" id="057a0317-9a09-4909-9368-f6982f353c41" name="esbqa1a_SterlingServices_2_ObjectStatus_KOBALT" postQueryString="false" mediaType="application/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic U29tYVVzZXI6Y0dGemMzY3djbVE9" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://esbqa1a.lowes.com:5550/service/mgmt/current</con:endpoint>
+					<con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dp:request xmlns:dp="http://www.datapower.com/schemas/management" domain="SterlingServices_2">
+			<dp:get-status class="ObjectStatus"/>
+		</dp:request>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+					<con:assertion type="XPath Match" id="707a6ddb-3d0b-47d7-bbd9-d29ed6935e05" name="GetShippingDeliveryChargesV001_XMLManager_UserAgent XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetShippingDeliveryChargesV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+
+					<con:assertion type="XPath Match" id="55b66c30-a19f-4f32-945b-60f7d8326f03" name="GetUnitCostV001_XMLManager_UserAgent XPath Match 1">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetUnitCostV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="67591604-f462-4f71-8a79-a33911d212e4" name="GetTaxesV001_XMLManager_UserAgent XPath Match 2">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetTaxesV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="ac6e2035-7d67-4088-a5c3-22811425f321" name="PricingAndInventoryV001_XMLManager_UserAgent XPath Match 3">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='PricingAndInventoryV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="c23cf484-d032-42fb-bc00-dc32296cd3ac" name="SterlingGatewayV001_XMLManager_UserAgent XPath Match 4">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SterlingGatewayV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="4352026e-92e3-43eb-a243-138311f16826" name="TaxExemptValidationV001_XMLManager_UserAgent XPath Match 5">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='TaxExemptValidationV001_XMLManager_UserAgent']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7ff01ae9-1fbc-4545-b5fa-43e08c871335" name="CommunicationSolutionsV001 XPath Match 6">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="e5effd69-fc0f-44df-a191-947ee4214d2e" name="CommunicationSolutionsV002 XPath Match 7">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Class' and text()='MultiProtocolGateway']/../*[local-name()='Name' and text()='CommunicationSolutionsV002']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="e5effd69-fc0f-44df-a191-947ee4214d2e" name="CommunicationSolutionsv002_MQQMGroup_A XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Class' and text()='MultiProtocolGateway']/../*[local-name()='Name' and text()='CommunicationSolutionsv002_MQQMGroup_A']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="e5effd69-fc0f-44df-a191-947ee4214d2e" name="CommunicationSolutionsv002_MQQMGroup_B XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Class' and text()='MultiProtocolGateway']/../*[local-name()='Name' and text()='CommunicationSolutionsv002_MQQMGroup_B']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="e5effd69-fc0f-44df-a191-947ee4214d2e" name="CommunicationSolutionsV002_MQQM_A XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Class' and text()='MultiProtocolGateway']/../*[local-name()='Name' and text()='CommunicationSolutionsV002_MQQM_A']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="e5effd69-fc0f-44df-a191-947ee4214d2e" name="CommunicationSolutionsV002_MQQM_B XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Class' and text()='MultiProtocolGateway']/../*[local-name()='Name' and text()='CommunicationSolutionsV002_MQQM_B']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7583adc6-c901-4a01-b19e-711f6cb7d75b" name="GetShippingDeliveryChargesV001 XPath Match 8">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetShippingDeliveryChargesV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="a2403d87-408a-40bf-9138-50a3f564cd91" name="GetTaxesV001 XPath Match 9">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetTaxesV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="5f75c34f-a524-4fda-9e4a-460bbad394b2" name="InsertCouponV001 XPath Match 10">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertCouponV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="ef85215a-1e81-4530-990c-1d145da06f4f" name="PricingAndInventoryV001 XPath Match 11">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='PricingAndInventoryV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="93e44f3b-248b-4a9f-b0c8-fa0c7978f244" name="SterlingGatewayV001 XPath Match 12">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SterlingGatewayV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="f5128204-da71-4705-b2af-403da8be451e" name="UniqueNumberGenerationV001 XPath Match 13">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='UniqueNumberGenerationV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="CommunicationSolutionsV002 Proxy Profile XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV002']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="GetCouponNumberV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetCouponNumberV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="GetInformationalMessageV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetInformationalMessageV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="InsertRebateV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertRebateV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="RebateQueryServiceV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='RebateQueryServiceV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="SpendAndGetMessageV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SpendAndGetMessageV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="SummingServiceV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SummingServiceV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="TaxBreakoutServiceV001 MPGW Service XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='TaxBreakoutServiceV001']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="GetCouponNumberV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetCouponNumberV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="GetInformationalMessageV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetInformationalMessageV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="InsertRebateV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertRebateV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="RebateQueryServiceV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='RebateQueryServiceV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="SpendAndGetMessageV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SpendAndGetMessageV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="SummingServiceV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SummingServiceV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="TaxBreakoutServiceV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='TaxBreakoutServiceV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="7d1caab8-37a5-4796-b389-b8a3bc25357a" name="CommunicationSolutionsV001_HTTPFSH XPath Match 14">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="ef44a040-4da7-4832-985e-ba684ab77a9a" name="CommunicationSolutionsV002_HTTPFSH XPath Match 15">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV002_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="4ee81f9c-0a94-4835-beff-b454086f9353" name="GetShippingDeliveryChargesV001_HTTPFSH XPath Match 16">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetShippingDeliveryChargesV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="43c8b215-1192-44f5-90ae-f0101861c107" name="GetShippingDeliveryChargesV001_HTTPFSH_Local XPath Match 17">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetShippingDeliveryChargesV001_HTTPFSH_Local']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="45a127f5-4336-4455-8d15-0ac1b8628156" name="GetTaxesV001_HTTPFSH XPath Match 18">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetTaxesV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="5be3b49c-8fae-494d-b574-8e0ee34bc248" name="GetTaxesV001_HTTPFSH_Local XPath Match 19">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetTaxesV001_HTTPFSH_Local']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="ce1a7ab1-c673-408c-a2d3-b67e12327e03" name="InsertCouponV001_HTTPFSH XPath Match 20">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertCouponV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="efaedebd-c438-48d1-982e-9530643279ea" name="PricingAndInventoryV001_HTTPFSH XPath Match 21">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='PricingAndInventoryV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="ec66d3c7-b7e0-40d0-9ff5-17d688a3c5de" name="PricingAndInventoryV001_HTTPFSH_Local XPath Match 22">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='PricingAndInventoryV001_HTTPFSH_Local']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="6e0f6fd3-06a9-4490-8c37-40b5269c805e" name="SterlingGatewayV001_HTTPFSH XPath Match 23">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SterlingGatewayV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="0b25105f-15f5-4c00-9c00-a571decd984f" name="UniqueNumberGenerationV001_HTTPFSH XPath Match 24">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='UniqueNumberGenerationV001_HTTPFSH']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="b5b60f9d-c4e2-474c-b541-85fb9abc5a18" name="UniqueNumberGenerationV001_HTTPFSH_Local XPath Match 25">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='UniqueNumberGenerationV001_HTTPFSH_Local']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="b835accb-b76b-416f-b351-fde2451dca1a" name="DB2DSNT XPath Match 26">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='DB2DSNT']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="81322be5-3a75-450b-ae7d-1208beea6c5e" name="DB2SqlDB2DSNQ XPath Match 27">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='DB2SqlDB2DSNQ']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="GetCouponNumberV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetCouponNumberV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="GetInformationalMessageV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetInformationalMessageV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="InsertRebateV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertRebateV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="RebateQueryServiceV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='RebateQueryServiceV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="SpendAndGetMessageV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SpendAndGetMessageV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="SummingServiceV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SummingServiceV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="05080793-065a-415a-a142-9e787188fe59" name="TaxBreakoutServiceV001_XMLManager XPath Match">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='TaxBreakoutServiceV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="bf4bca63-acc0-4d8d-864c-d828f07078e7" name="CommunicationSolutionsV001_XMLManager XPath Match 28">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="fdedbd69-03bd-4841-92c8-19c1678e0b63" name="CommunicationSolutionsV002_XMLManager XPath Match 29">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='CommunicationSolutionsV002_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="0a2e4346-6e52-46d6-a581-ea73e05a5a40" name="GetShippingDeliveryChargesV001_XMLManager XPath Match 30">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetShippingDeliveryChargesV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="6f61a2d2-5725-469f-98c5-15454c0c56a5" name="GetTaxesV001_XMLManager XPath Match 31">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetTaxesV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="152a65b3-824e-4c86-8f09-ac7eb906b5c5" name="GetUnitCostV001_XMLManager XPath Match 32">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='GetUnitCostV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="282096a0-a260-48db-b5bf-5f451863c91f" name="InsertCouponV001_XMLManager XPath Match 33">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='InsertCouponV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="43bd4e10-c888-4f25-8808-77a88ee19ed5" name="PricingAndInventoryV001_XMLManager XPath Match 34">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='PricingAndInventoryV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="0fe44b40-a529-4f7c-9a7a-8b7c78a9184e" name="SterlingGatewayV001_XMLManager XPath Match 35">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='SterlingGatewayV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="35f986c8-3247-4eca-9f67-8fab5e29ae3a" name="TaxExemptValidationV001_XMLManager XPath Match 36">
+						<con:configuration>
+							<path>//*[local-name()='ObjectStatus']/*[local-name()='Name' and text()='TaxExemptValidationV001_XMLManager']/../*[local-name()='OpState' and text()='up']</path>
+							<content>&lt;OpState read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">up&lt;/OpState></content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="Valid HTTP Status Codes" id="3b8a5c5c-ed43-4e11-bf08-983771f82b9f" name="Valid HTTP Status Codes">
+						<con:configuration>
+							<codes>200</codes>
+						</con:configuration>
+					</con:assertion>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters/>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="httprequest" name="esbqa1a_SterlingServices_2_FileAndDirectoryCount_KOBALT" id="a54c09f6-be32-4ec9-be16-391aa56e4cac">
+				<con:settings/>
+				<con:config method="POST" xsi:type="con:HttpRequest" id="795b4346-31ab-440e-a8a7-fdd38c61a5e9" name="esbqa1a_SterlingServices_2_FileAndDirectoryCount_KOBALT" postQueryString="false" mediaType="application/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic U29tYVVzZXI6Y0dGemMzY3djbVE9" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://esbqa1a.lowes.com:5550/service/mgmt/current</con:endpoint>
+					<con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dp:request xmlns:dp="http://www.datapower.com/schemas/management" domain="SterlingServices_2">
+			<dp:get-filestore location="local:"/>
+		</dp:request>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+					<con:assertion type="XPath Match" id="25476d91-44bf-4b24-a23e-449deb0ce7d7" name="File Count XPath Match">
+						<con:configuration>
+							<path>count(//*[local-name()="file"])</path>
+							<content>234</content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:assertion type="XPath Match" id="94134e22-2f58-4943-b369-a716b3256e56" name="Directory Count XPath Match">
+						<con:configuration>
+							<path>count(//*[local-name()="directory" and not(contains(@name,'local:/hda'))])</path>
+							<content>32</content>
+							<allowWildcards>false</allowWildcards>
+							<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+							<ignoreComments>false</ignoreComments>
+						</con:configuration>
+					</con:assertion>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters/>
+				</con:config>
+			</con:testStep>
+			<con:properties/>
+		</con:testCase>
+		<con:properties/>
+	</con:testSuite>
+	<con:properties/>
+	<con:wssContainer/>
+	<con:oAuth2ProfileContainer/>
+</con:soapui-project>
